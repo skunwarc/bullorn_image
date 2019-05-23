@@ -9,19 +9,17 @@
 <div th:replace="base :: navlinks"></div>
 <h2>Message Form</h2>
 
-<form  method="POST" action="/add" th:object="${actor}"
-       enctype="multipart/form-data">
 
-<form action="#" th:action="@{/messageform}" th:object="${message}" method="post">
-    <input type="hidden" th:field="*{id}" />
+
+        <form method="post" action="/messageform" th:object="${message}" enctype="multipart/form-data">
 
 
     Content:<input type="text" th:field="*{content}" />
-    <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}" ></span><br/>
+
     Post Date :<input type="text" th:field="*{posteddate}" />
-    <span th:if="${#fields.hasErrors('posteddate')}" th:errors="*{posteddate}" ></span><br/>
+
     Sent By:<input type="text" th:field="*{sentby}" />
-    <span th:if="${#fields.hasErrors('sentby')}" th:errors="*{sentby}" ></span><br/>
+
 
     <input type="file" name="file" /><br /> <br />
 

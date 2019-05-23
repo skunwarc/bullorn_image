@@ -34,7 +34,7 @@
     <h2>Message List</h2>
     <a href="/add"> Add a Message</a> <br/>
 
-    <div th:each="actor: ${messages}">
+    <div th:each="message: ${messages}">
         <div th:if="${message.sentby} !=null">
             <img th:src="${message.sentby}" />
             <hr />
