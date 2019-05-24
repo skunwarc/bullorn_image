@@ -20,8 +20,6 @@ public class CloudinaryConfig {
     public CloudinaryConfig(@Value("674569594276411") String key,
                             @Value ("YfMqd4Ay-YOx9qRbKmjlLtoUJo4") String secret,
                             @Value ("dca0pvel9") String cloud){
-
-
         cloudinary = Singleton.getCloudinary();
         cloudinary.config.cloudName=cloud;
         cloudinary.config.apiSecret=secret;
