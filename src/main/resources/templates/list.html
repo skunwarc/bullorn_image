@@ -2,18 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-
-
 </head>
 <body>
-
 
 <div class="p-3 mb-2 bg-dark text-warning">
     <nav class="navbar navbar-expand-sm bg-light">
@@ -42,31 +37,18 @@
         </div>
         <h3 th:text="${message.content}"></h3>
         <h4 th:text="${message.posteddate}"></h4>
-
+        <a th:href="@{/update/{id}(id=${message.id})}">Update</a>
+        <a th:href="@{/details/{id}(id=${message.id})}">Details</a>
+        <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
 
     </div>
 
-    <!--<table>-->
-        <!--<tr>-->
+    <table>
 
-            <!--<th>Content</th>-->
-            <!--<th>Post Date</th>-->
-            <!--<th>Sent By</th>-->
+        <tr th:each="message :${messages}">
 
-
-        <!--</tr>-->
-        <!--<tr th:each="message :${messages}">-->
-            <!--<td th:text="${message.content}"></td>-->
-            <!--<td th:text="${message.posteddate}"></td>-->
-            <!--<td th:text="${message.sentby}"></td>-->
-
-            <!--<td>-->
-                <!--<a th:href="@{/update/{id}(id=${message.id})}">Update</a>-->
-                <!--<a th:href="@{/details/{id}(id=${message.id})}">Details</a>-->
-                <!--<a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>-->
-            <!--</td>-->
-        <!--</tr>-->
-    <!--</table>-->
+        </tr>
+    </table>
 
     <div th:replace="base :: footer"></div>
 
